@@ -1,1 +1,2 @@
-# IDC-New
+# IDC
+IDC Sitecore Repo
