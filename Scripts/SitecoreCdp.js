@@ -16,11 +16,6 @@ window._boxever_settings = {
 	web_flow_target: SITECORECDP_WEB_FLOW_TARGET,
 };
 
-loadScCdpLib();
-if (SEND_VIEW_EVENT) {
-	delayUntilBrowserIdIsAvailable(View);
-}
-
 function loadScCdpLib(callback) {
 	console.log('Sitecore CDP Tampermonkey script - loadScCdpLib');
 	var scriptElement = document.createElement('script');
@@ -88,11 +83,6 @@ function AttachToLogin(){
 //keyboard shortcuts
 function KeyPress(e) {
 	var evtobj = window.event ? event : e
-	// CTRL + I = Identify via static values
-	if (evtobj.keyCode == I && evtobj.ctrlKey) {
-		Identify(IDENTITY_PROVIDER, IDENTITY_EMAIL, IDENTITY_FNAME, IDENTITY_LNAME, IDENTITY_EMAIL, GENDER);
-		console.log("IDENTIFIED");
-	}
 	// Alt + A = Anonymize
 	if (evtobj.keyCode == C && evtobj.altKey) {
 		Anonymize();
